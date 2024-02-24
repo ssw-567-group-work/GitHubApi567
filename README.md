@@ -1,6 +1,6 @@
-# template-567
+# GitHubApi567
 
-[![CI](https://github.com/ssw-567-group-work/template/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/ssw-567-group-work/template/actions/workflows/ci.yml)
+[![CI](https://github.com/ssw-567-group-work/GitHubApi567/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/ssw-567-group-work/GitHubApi567/actions/workflows/ci.yml)
 
 ## Setup
 
