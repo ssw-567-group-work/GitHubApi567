@@ -48,7 +48,7 @@ def parse_link_header(link_header: str) -> dict[str, str]:
     """Parse the `Link` header from a GitHub API response into a dictionary"""
     # TODO: implement
     return {
-        'last': "https://api.github.com/repositories/198065251/commits?per_page=1&page=3095"
+        "last": "https://api.github.com/repositories/198065251/commits?per_page=1&page=3095"
     }
 
 
