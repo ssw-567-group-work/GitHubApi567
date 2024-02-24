@@ -1,8 +1,5 @@
-import datetime
-from typing import Any
-import requests
 import requests_cache
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse, parse_qs, urlunparse, urlencode
 
 BASE_URL = "https://api.github.com"
 
@@ -21,8 +18,8 @@ class Fetcher:
 
     def fetch_repos(self, username: str) -> list[str]:
         """Fetch the repositories for a given user"""
-        resp = self.__fetch_paginated(f"{BASE_URL}/users/{username}/repos")
-        raise NotImplementedError()
+        items = self.__fetch_paginated(f"/users/{username}/repos")
+        return parse_repos(items)
 
     def fetch_commit_count(self, username: str, repo: str) -> int:
         """Fetch the number of commits for a given user and repository"""
@@ -41,7 +38,26 @@ class Fetcher:
 
     def __fetch_paginated(self, url: str) -> list[dict]:
         """Fetch a paginated resource from the GitHub API and return all the results"""
-        raise NotImplementedError()
+        assert url.startswith("/")
+        parsed = urlparse(f"{BASE_URL}{url}")
+        query = parse_qs(parsed.query)
+        query["per_page"] = ["100"]
+        has_next = True
+        page = 1
+        items: list[dict] = []
+
+        while has_next:
+            query["page"] = [str(page)]
+            new_url = urlunparse(parsed._replace(query=urlencode(query, doseq=True)))
+            print(f"fetching {new_url}")
+            resp = self.session.get(new_url)
+            resp.raise_for_status()
+            items.extend(resp.json())
+
+            has_next = "next" in resp.headers.get("Link", "")
+            page += 1
+
+        return items
 
 
 def parse_link_header(link_header: str) -> dict[str, str]:
