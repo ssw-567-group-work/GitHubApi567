@@ -28,6 +28,11 @@ Run tests
 just test
 ```
 
+Run the program
+```bash
+poetry run python main.py
+```
+
 ### Making PRs
 
 1. Create a branch

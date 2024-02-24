@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "template-567"
+name = "GitHubApi567"
 version = "0.1.0"
 description = ""
 authors = ["Carson McManus <carson.mcmanus1@gmail.com>"]
@@ -8,12 +8,16 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 hypothesis = "^6.97.0"
+requests = "^2.31.0"
+typed-argument-parser = "^1.9.0"
+requests-cache = "^1.2.0"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.4.0"
 mypy = "^1.8.0"
 black = "^23.12.1"
 pytest = "^7.4.4"
+types-requests = "^2.31.0.20240218"
 
 [build-system]
 requires = ["poetry-core"]
