@@ -4,7 +4,7 @@ python:
 
 # command to run tests
 script:
- - python -m unittest test_example
- - python -m unittest test_fetching
- - python -m unittest test_response_parsing
+ - python -m pytest tests/test_example
+ - python -m pytest tests/test_fetching
+ - python -m pytest tests/test_response_parsing
  
