@@ -1,11 +1,10 @@
-dist: jammy
+dist: focal
 language: python
 python:
   - 3.10
 cache: pip
 
 before_install:
-  - pip install packaging
   - pip install poetry
 install:
   - poetry install
