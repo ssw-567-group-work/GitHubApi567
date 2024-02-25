@@ -1,10 +1,10 @@
 language: python
 python:
- - "3.5"
+ - "3.7"
+
+install:
+ - pip install requests
 
 # command to run tests
 script:
- - python -m unittest test_example
- - python -m unittest test_fetching
- - python -m unittest test_response_parsing
- 
+ - python -m pytest tests/test_fetching.py
