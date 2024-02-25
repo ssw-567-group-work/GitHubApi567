@@ -1,10 +1,12 @@
 language: python
 python:
- - "3.5"
+  - 3.10
 
-# command to run tests
+before_install:
+  - pip install poetry
+install:
+  - poetry install
+  - curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s
 script:
- - python -m unittest test_example
- - python -m unittest test_fetching
- - python -m unittest test_response_parsing
- 
+  - just lint
+  - just test
