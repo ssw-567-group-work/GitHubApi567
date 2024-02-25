@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/ssw-567-group-work/GitHubApi567/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/ssw-567-group-work/GitHubApi567/actions/workflows/ci.yml)
 
+[![Build Status](https://app.travis-ci.com/ssw-567-group-work/GitHubApi567.svg?branch=main)](https://app.travis-ci.com/ssw-567-group-work/GitHubApi567)
+
 ## Setup
 
 1. Install Python 3.10 or later
