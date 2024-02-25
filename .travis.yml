@@ -5,6 +5,7 @@ python:
 cache: pip
 
 before_install:
+  - pip install packaging
   - pip install poetry
 install:
   - poetry install
