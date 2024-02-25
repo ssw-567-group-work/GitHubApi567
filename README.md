@@ -1,7 +1,7 @@
 # GitHubApi567
 
 [![CI](https://github.com/ssw-567-group-work/GitHubApi567/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/ssw-567-group-work/GitHubApi567/actions/workflows/ci.yml)
-[![Travis](https://app.travis-ci.com/CodyBF/ssw-567-group-work/GitHubApi567.svg?branch=main)](https://app.travis-ci.com/CodyBF/ssw-567-group-work/GitHubApi567)
+[![Build Status](https://app.travis-ci.com/CodyBF/ssw-567-group-work/GitHubApi567.svg?branch=main)](https://app.travis-ci.com/CodyBF/ssw-567-group-work/GitHubApi567)
 
 ## Setup
 
