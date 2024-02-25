@@ -1,0 +1,10 @@
+language: python
+python:
+ - "3.5"
+
+# command to run tests
+script:
+ - python -m unittest test_example
+ - python -m unittest test_fetching
+ - python -m unittest test_response_parsing
+ 
