@@ -21,7 +21,7 @@ types-requests = "^2.31.0.20240218"
 requests-mock = "^1.11.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core", "packaging.metadata"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.coverage.run]
