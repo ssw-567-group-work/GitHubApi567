@@ -2,8 +2,10 @@ dist: jammy
 language: python
 python:
   - 3.10
+cache: pip
 
 before_install:
+  - pip install --upgrade pip
   - pip install poetry
 install:
   - poetry install
