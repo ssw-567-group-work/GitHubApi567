@@ -54,6 +54,8 @@ def build_mocks(session):
         ],
     )
 
+    m.get("https://api.github.com/repos/nolink/repo1/commits?per_page=1", json=[])
+
     return m
 
 
@@ -80,3 +82,11 @@ def test_fetch_commit_count():
     with build_mocks(fetcher.session) as m:
         count = fetcher.fetch_commit_count("dyc3", "repo1")
         assert count == 6
+
+
+def test_fetch_commit_count_no_link():
+    fetcher = Fetcher()
+    fetcher.session = requests.Session()
+    with build_mocks(fetcher.session) as m:
+        with pytest.raises(ValueError):
+            fetcher.fetch_commit_count("nolink", "repo1")
