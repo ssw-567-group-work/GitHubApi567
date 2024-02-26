@@ -1,5 +1,6 @@
 import requests_cache
 from urllib.parse import urlparse, parse_qs, urlunparse, urlencode
+import sys
 
 BASE_URL = "https://api.github.com"
 
@@ -28,6 +29,7 @@ class Fetcher:
         resp = self.session.get(
             f"{BASE_URL}/repos/{username}/{repo}/commits?per_page=1"
         )
+        resp.raise_for_status()
         link_header = resp.headers.get("Link")
         if link_header is None:
             raise ValueError("Link header not found in response")
@@ -49,7 +51,7 @@ class Fetcher:
         while has_next:
             query["page"] = [str(page)]
             new_url = urlunparse(parsed._replace(query=urlencode(query, doseq=True)))
-            print(f"fetching {new_url}")
+            print(f"fetching {new_url}", file=sys.stderr)
             resp = self.session.get(new_url)
             resp.raise_for_status()
             items.extend(resp.json())
