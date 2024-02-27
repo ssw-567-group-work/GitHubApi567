@@ -62,10 +62,14 @@ class Fetcher:
 
 def parse_link_header(link_header: str) -> dict[str, str]:
     """Parse the `Link` header from a GitHub API response into a dictionary"""
-    # TODO: implement
-    return {
-        "last": "https://api.github.com/repositories/198065251/commits?per_page=1&page=3095"
-    }
+    chunks = link_header.split(",")
+    output = {}
+    for i in range(0, len(chunks)):
+        link = chunks[i][chunks[i].index("<") + 1 : chunks[i].index(">")]
+        name = chunks[i][chunks[i].index("\"") + 1 : chunks[i].index("\"", chunks[i].index("\"") + 1)]
+        output[name] = link
+
+    return output
 
 
 def parse_repos(raw: list[dict]) -> list[str]:
