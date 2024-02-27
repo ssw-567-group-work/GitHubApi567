@@ -68,7 +68,9 @@ def parse_link_header(link_header: str) -> dict[str, str]:
     output = {}
     for i in range(0, len(chunks)):
         link = chunks[i][chunks[i].index("<") + 1 : chunks[i].index(">")]
-        name = chunks[i][chunks[i].index("\"") + 1 : chunks[i].index("\"", chunks[i].index("\"") + 1)]
+        name = chunks[i][
+            chunks[i].index('"') + 1 : chunks[i].index('"', chunks[i].index('"') + 1)
+        ]
         output[name] = link
 
     return output
