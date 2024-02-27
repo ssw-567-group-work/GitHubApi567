@@ -75,7 +75,6 @@ def test_fetch_repos_multi_page():
         assert repos == ["repo1", "repo2", "repo3", "repo4", "repo5", "repo6"]
 
 
-@pytest.mark.skip(reason="not implemented")
 def test_fetch_commit_count():
     fetcher = Fetcher()
     fetcher.session = requests.Session()
