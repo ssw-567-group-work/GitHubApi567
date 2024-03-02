@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "HW05a_Mocking"]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "HW05a_Mocking"]
 
   workflow_dispatch:
 
