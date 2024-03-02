@@ -1,8 +1,8 @@
 # GitHubApi567
 
-[![CI](https://github.com/ssw-567-group-work/GitHubApi567/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/ssw-567-group-work/GitHubApi567/actions/workflows/ci.yml)
+[![CI](https://github.com/ssw-567-group-work/GitHubApi567/actions/workflows/ci.yml/badge.svg?branch=HW05a_Mocking)](https://github.com/ssw-567-group-work/GitHubApi567/actions/workflows/ci.yml)
 
-[![Build Status](https://app.travis-ci.com/ssw-567-group-work/GitHubApi567.svg?branch=main)](https://app.travis-ci.com/ssw-567-group-work/GitHubApi567)
+[![Build Status](https://app.travis-ci.com/ssw-567-group-work/GitHubApi567.svg?branch=HW05a_Mocking)](https://app.travis-ci.com/ssw-567-group-work/GitHubApi567)
 
 ## Setup
 
